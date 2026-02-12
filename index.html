@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Keshika 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #ffd6e0, #fbc2eb, #a6c1ee, #ffe0f0);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #5e4b56;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      animation: fadeIn 2s ease;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px auto;
+      width: 95%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-top: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 40px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #ff8fab;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255,143,171,0.5);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: white;
+      color: #ff8fab;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 300px;
+      height: 180px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    #countdown {
+      font-size: 18px;
+      margin-top: 25px;
+      font-weight: bold;
+      line-height: 1.8;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Keshika 💕</h1>
+  <h2>I made something for you ✨</h2>
+
+  <div class="box">
+    <h2>📸 Our Favourite Memory</h2>
+    <img src="YOUR_IMAGE_LINK_HERE" alt="Us">
+  </div>
+
+  <div class="box">
+    <h2>💌 5 Reasons I Love You</h2>
+    <p>💗 You make my world softer.</p>
+    <p>🌸 You believe in me.</p>
+    <p>✨ You make ordinary days special.</p>
+    <p>😍 Your smile still gives me butterflies.</p>
+    <p>🏡 Loving you feels like home.</p>
+  </div>
+
+  <div class="box">
+    <h2>🎵 Our Song</h2>
+    <p>Teenage Dream - Stephen Dawes 💞</p>
+    <iframe src="https://www.youtube.com/embed/pVi9W3OThVw"
+      frameborder="0" allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="box">
+    <h2>💖 One Year Together</h2>
+    <p>On Valentine's Day, we complete one year 🥺</p>
+    <p>365 days of memories, laughs, and love 💕</p>
+  </div>
+
+  <div class="box">
+    <h1>Will you be my Valentine again? 💘</h1>
+    <button id="yesBtn" onclick="yesClicked()">YES 💖</button>
+    <button id="noBtn" onclick="noClicked()">No 😒</button>
+  </div>
+
+<script>
+
+function yesClicked() {
+  confettiExplosion();
+
+  document.body.innerHTML = `
+    <h1 style="margin-top:60px; font-family:'Playfair Display', serif;">
+      Happy One Year, My Love 💖
+    </h1>
+    <h2>You made this the best year of my life 🥹</h2>
+    <h2>Here is to forever with you, Keshika 💕</h2>
+    <div id="countdown"></div>
+  `;
+
+  startCountdown();
+}
+
+function noClicked() {
+  alert("Are you sureeee? 🥺");
+  alert("It is our one year anniversary you know 😌");
+  alert("Okay okay... try again 💖");
+}
+
+function confettiExplosion() {
+  for (let i = 0; i < 180; i++) {
+    let confetti = document.createElement("div");
+    confetti.style.position = "fixed";
+    confetti.style.width = "8px";
+    confetti.style.height = "8px";
+    confetti.style.backgroundColor =
+      "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.top = "-10px";
+    confetti.style.transition = "top 3s linear, opacity 3s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.style.top = window.innerHeight + "px";
+      confetti.style.opacity = 0;
+    }, 10);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 3000);
+  }
+}
+
+function startCountdown() {
+  let now = new Date();
+  let year = now.getFullYear();
+  let nextValentine = new Date("February 14, " + year + " 00:00:00");
+
+  if (now > nextValentine) {
+    nextValentine = new Date("February 14, " + (year + 1) + " 00:00:00");
+  }
+
+  setInterval(function() {
+
+    let currentTime = new Date().getTime();
+    let distance = nextValentine.getTime() - currentTime;
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      "⏳ Countdown to our next Valentine's Day 💘<br><br>" +
+      days + " days 💕<br>" +
+      hours + " hours 💗<br>" +
+      minutes + " minutes 🌸<br>" +
+      seconds + " seconds ✨";
+
+  }, 1000);
+}
+
+// Floating hearts
+setInterval(function(){
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(function(){
+    heart.remove();
+  }, 6000);
+}, 700);
+
+</script>
+
+</body>
+</html>
